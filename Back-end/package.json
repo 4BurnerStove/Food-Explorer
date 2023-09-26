@@ -1,0 +1,15 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Andre Morryson Sousa Alves",
+  "license": "ISC",
+  "description": "API desenvolvida para as funcionalidades do projeto Food explorer",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
