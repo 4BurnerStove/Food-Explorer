@@ -3,6 +3,9 @@ class AppError {
   statusCode
 
   constructor(message, statusCode = 400){
-    this.message
+    this.message = message
+    this.statusCode = statusCode
   }
 }
+
+module.exports = AppError
