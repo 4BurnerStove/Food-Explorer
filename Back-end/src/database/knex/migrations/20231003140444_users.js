@@ -1,15 +1,9 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-exports.up = function(knex) {
-  
-};
+exports.up = knex.schema.createTable('users', table => {
+  table.increments('id')
+  table.text('name')
+  table.text('email')
+  table.text('password')
+  table.boolean('isAdmin').defaultTo(false)
 
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-exports.down = function(knex) {
-  
-};
+})
+exports.down = knex => knex.schema.dropTable('users')
