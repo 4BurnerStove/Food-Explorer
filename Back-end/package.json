@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "API desenvolvida para as funcionalidades do projeto Food explorer",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
     "knex": "^2.5.1",
