@@ -5,4 +5,5 @@ exports.up = knex => knex.schema.createTable('favorites', table => {
   table.foreign('user_id').references('id').inTable('users')
   table.foreign('dish_id').references('id').inTable('dishes')
 })
+
 exports.down = knex => knex.schema.dropTable('favorites')

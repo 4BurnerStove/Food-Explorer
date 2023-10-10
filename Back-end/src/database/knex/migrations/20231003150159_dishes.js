@@ -1,6 +1,6 @@
 exports.up = knex => knex.schema.createTable('dishes', table => {
   table.increments('id')
-  table.text('name')
+  table.text('title')
   table.text('description')
   table.decimal('price')
   table.text('imageFood').defaultTo(null)

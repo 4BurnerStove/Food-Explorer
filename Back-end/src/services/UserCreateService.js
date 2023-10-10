@@ -13,6 +13,10 @@ class userCreateService{
       throw new AppError("Este e-mail já está em uso.")
     }
 
+    if(!isAdmin) {
+      isAdmin = 0
+    }
+
     if(!name || !email || !password) {
       throw new AppError("Preencha todos os campos.")
     }
