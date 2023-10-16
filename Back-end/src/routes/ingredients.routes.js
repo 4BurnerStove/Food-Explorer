@@ -6,6 +6,6 @@ const ingredientsRoutes = Router()
 
 const ingredientsController = new IngredientsController()
 
-ingredientsRoutes.get('/', ingredientsController.create)
+ingredientsRoutes.get('/:dishes_id', ingredientsController.index)
 
 module.exports = ingredientsRoutes

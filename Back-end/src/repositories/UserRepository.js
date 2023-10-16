@@ -12,7 +12,7 @@ class UserRepository {
     const database = await sqliteConnection()
 
     const userId = await database.run("INSERT INTO users (name, email, password, isAdmin) VALUES (?, ?, ?, ?)", [name, email, password, isAdmin])
-
+    
     return {id: userId}
   }
 }
