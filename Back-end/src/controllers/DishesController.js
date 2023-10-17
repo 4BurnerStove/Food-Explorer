@@ -32,6 +32,14 @@ class DishesController{
 
   }
 
+  async delete(req, res) {
+    const { id } = req.params
+
+    await knex('dishes').where({ id }).delete()
+
+    return response.json()
+  }
+
   async index(req, res) {
     const { title, ingredients } = req.query
 
