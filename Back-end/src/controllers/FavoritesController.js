@@ -9,7 +9,7 @@ class FavoritesController {
     res.json(favorite);
   } 
 
-  async remove(req, res){
+  async delete(req, res){
     const favoriteId = req.params.id
     console.log(favoriteId)
     

@@ -7,6 +7,6 @@ const favoritesRoutes = Router()
 const favoritesController = new FavoritesController()
 
 favoritesRoutes.post('/', favoritesController.create)
-favoritesRoutes.delete('/remove/:id', favoritesController.remove)
+favoritesRoutes.delete('/remove/:id', favoritesController.delete)
 
 module.exports = favoritesRoutes
