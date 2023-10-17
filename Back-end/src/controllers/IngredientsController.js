@@ -5,8 +5,6 @@ class IngredientsController {
     const {dishes_id} = req.params
 
     const ingredients = await knex('ingredients').where({dishes_id}).groupBy('ingredient')
-
-
     return res.json(ingredients)
   }
 }

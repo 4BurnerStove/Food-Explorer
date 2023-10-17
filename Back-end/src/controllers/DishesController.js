@@ -22,6 +22,30 @@ class DishesController{
 
     res.json()
   }
+
+  async show(req, res) {
+    const { id } = req.params
+
+    const dishe = await knex('dishes').where({ id }).first()
+
+    return res.json(dishe)
+
+  }
+
+  async index(req, res) {
+    const { title, ingredients } = req.query
+
+    let dishes 
+
+    if(ingredients){
+      const filteredIngredients = ingredients.split(',').map(ingredient => ingredient)
+
+      dishes = await knex('ingredients').select([
+        'dishes.id',
+        'dishes.title'
+      ])
+    }
+  }
 }
 
 module.exports = DishesController
