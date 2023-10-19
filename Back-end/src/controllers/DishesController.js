@@ -43,9 +43,22 @@ class DishesController{
   async index(req, res) {
     const { title, ingredients } = req.query
 
-    const dishe = await knex("dishes")
-    .where({ title })
-    .orderBy('title')
+    let dishe
+
+    if (ingredients) {
+      const filterIgredients = ingredients.split(',').map(ingredient => ingredient.trim())
+
+      dishe = await knex('ingredients')
+      .whereIn('ingredient', filterIgredients )
+
+    } else {
+
+      dishe = await knex("dishes")
+      .whereLike('title', `%${title}%`)
+      .orderBy('title')
+
+    }
+
 
     return res.json(dishe)
   }
