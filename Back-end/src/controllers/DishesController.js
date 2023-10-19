@@ -43,16 +43,11 @@ class DishesController{
   async index(req, res) {
     const { title, ingredients } = req.query
 
-    let dishes 
+    const dishe = await knex("dishes")
+    .where({ title })
+    .orderBy('title')
 
-    if(ingredients){
-      const filteredIngredients = ingredients.split(',').map(ingredient => ingredient)
-
-      dishes = await knex('ingredients').select([
-        'dishes.id',
-        'dishes.title'
-      ])
-    }
+    return res.json(dishe)
   }
 }
 
