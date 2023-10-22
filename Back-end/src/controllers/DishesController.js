@@ -49,7 +49,14 @@ class DishesController{
       const filterIgredients = ingredients.split(',').map(ingredient => ingredient.trim())
 
       dishe = await knex('ingredients')
+      .select([
+        "dishes.id",
+        "dishes.title",
+      ])
+      .whereLike("dishes.title", `%${title}%`)
       .whereIn('ingredient', filterIgredients )
+      .innerJoin("dishes", "dishes.id", "ingredients.dishes_id")
+      .orderBy("dishes.title")
 
     } else {
 
