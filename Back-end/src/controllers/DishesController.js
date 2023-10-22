@@ -59,15 +59,26 @@ class DishesController{
       .orderBy("dishes.title")
 
     } else {
-
       dishe = await knex("dishes")
       .whereLike('title', `%${title}%`)
       .orderBy('title')
-
     }
 
+    const IngredientsForDishes = await knex('ingredients')
 
-    return res.json(dishe)
+
+    const dishesWithIngredients =  dishe.map(dishes => {
+      const disheIngredient = IngredientsForDishes.filter(tag => tag.dishes_id === dishes.id)
+      console.log(disheIngredient)
+
+      return {
+        ...dishes,
+        ingredient: disheIngredient
+      }
+    })
+
+
+    return res.json(dishesWithIngredients)
   }
 }
 
