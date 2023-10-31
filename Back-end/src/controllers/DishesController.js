@@ -11,10 +11,10 @@ class DishesController{
       imageFood
     })
 
-    const ingredientInsert = ingredients.map(ingredient => {
+    const ingredientInsert = ingredients.map(name => {
       return { 
         dishes_id,
-        ingredient
+        name
       }
     })
 
