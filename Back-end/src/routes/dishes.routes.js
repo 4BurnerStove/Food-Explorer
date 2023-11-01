@@ -10,12 +10,11 @@ const dishesController = new DishesController()
 
 
 dishesRoutes.use(ensureAuthenticated)
-dishesRoutes.use(verifyUserAuthorization("admin"))
 
-dishesRoutes.post('/', dishesController.create)
+dishesRoutes.post('/', verifyUserAuthorization("admin"),  dishesController.create)
 dishesRoutes.get('/', dishesController.index)
-dishesRoutes.get('/:id', dishesController.show)
-dishesRoutes.delete('/:id', dishesController.delete)
+dishesRoutes.get('/:id', verifyUserAuthorization("admin"), dishesController.show)
+dishesRoutes.delete('/:id', verifyUserAuthorization("admin"), dishesController.delete)
 
 
 module.exports = dishesRoutes
