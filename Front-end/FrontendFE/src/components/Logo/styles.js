@@ -6,8 +6,9 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  white-space: nowrap;
   color: ${({theme}) => theme.COLORS.LIGHT_100};
-
+  no-
 
   > img {
     width: 4.5rem;

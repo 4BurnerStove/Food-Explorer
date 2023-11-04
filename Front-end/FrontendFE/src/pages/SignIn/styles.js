@@ -1,14 +1,16 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  padding: 10rem 18.6rem;
+  padding: 10rem 22.6rem;
   display: flex;
   justify-content: center;
+  gap: 5%;
 
  color: ${({theme}) => theme.COLORS.LIGHT_100};
 
   h1 {
    text-align: center;
+   white-space: nowrap;
  }
 
  display: flex;
