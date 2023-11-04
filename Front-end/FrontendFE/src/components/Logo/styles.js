@@ -1,0 +1,15 @@
+import styled from 'styled-components'
+
+export const Container = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  color: ${({theme}) => theme.COLORS.LIGHT_100};
+
+
+  > img {
+    width: 4.5rem;
+  }
+`
