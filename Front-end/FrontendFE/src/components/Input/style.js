@@ -13,12 +13,12 @@ export const Container = styled.div`
 
     width: 100%;
     height: 4.8rem;
-    color: ${({theme}) => theme.COLORS.LIGHT_500};
+    color: ${({theme}) => theme.COLORS.LIGHT_200};
     background: transparent;
     border: none;
 
     &::placeholder{
-      color: ${({theme}) => theme.COLORS.LIGHT_200};
+      color: ${({theme}) => theme.COLORS.LIGHT_500};
     }
   }
 

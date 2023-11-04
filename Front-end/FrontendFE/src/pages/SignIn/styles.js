@@ -7,3 +7,13 @@ export const Container = styled.div`
  align-items: stretch;
 
 `
+
+export const Form = styled.form`
+
+
+`
+
+export const Logo = styled.div`
+
+  
+`
