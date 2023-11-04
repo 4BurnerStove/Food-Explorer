@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components'
 import GlobalStyles from './styles/global'
 import Theme from './styles/theme'
 
+// import { SignUp } from "./pages/SignUp"
 import { SignIn } from "./pages/SignIn"
 
 ReactDOM.createRoot(document.getElementById('root')).render(

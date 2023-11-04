@@ -4,13 +4,23 @@ import { Button } from "../../components/Button"
 import { ButtonText } from "../../components/ButtonText"
 import { Logo } from '../../components/Logo'
 
-export function SignIn() {
+export function SignUp() {
   return (
     <Container>
       <Logo />
 
       <Form>
-        <h1>Faça login</h1>
+        <h1>Crie sua conta</h1>
+
+        <section>
+          <label for="Nome">Seu nome</label>
+          <Input
+            id="Nome"
+            type='text'
+            placeholder='Exemplo: Maria da Silva'
+          ></Input>
+        </section>
+
         <section>
           <label for="E-mail">E-mail</label>
           <Input
@@ -19,6 +29,7 @@ export function SignIn() {
             placeholder='Exemplo: exemplo@exemplo.com.br'
           ></Input>
         </section>
+
         <section>
           <label for="Password">Senha</label>
           <Input
@@ -28,9 +39,9 @@ export function SignIn() {
           ></Input>
         </section>
 
-        <Button name='Entrar'></Button>
+        <Button name='Criar conta'></Button>
 
-        <ButtonText name='Criar uma conta'></ButtonText>
+        <ButtonText name='Já tenho uma conta'></ButtonText>
       </Form>
     </Container>
   )
