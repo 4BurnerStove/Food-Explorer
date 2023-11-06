@@ -8,7 +8,7 @@ export const Container = styled.div`
   gap: 2rem;
   white-space: nowrap;
   color: ${({theme}) => theme.COLORS.LIGHT_100};
-  no-
+  margin-inline: .8rem;
 
   > img {
     width: 4.5rem;

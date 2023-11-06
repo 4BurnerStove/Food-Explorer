@@ -9,6 +9,7 @@ export default {
 
     DARK_400: "#000A0F",
     DARK_700: "#001119",
+    DARK_600: "#00111A",
     DARK_800: "#0D1D25",
     DARK_900: "#0D1D25",
 
