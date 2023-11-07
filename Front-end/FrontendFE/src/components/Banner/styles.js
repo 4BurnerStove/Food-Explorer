@@ -46,16 +46,15 @@ position: relative;
   @media screen and (max-width: 1218px) {
     div {
      font-size: 1.8rem;
-     width: 28rem;
-     margin-right: 2.2rem;
+     width: 26rem;
+     margin-right: 1.2rem;
     }
-
   }
 
- @media screen and (max-width: 890px) {
+ @media screen and (max-width: 895px) {
 
   height: 16rem;
-  margin-top: 18.4rem;
+  margin-top: 17.5rem;
 
     div {
     font-size: 1.2rem;
