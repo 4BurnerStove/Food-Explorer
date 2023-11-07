@@ -52,7 +52,7 @@ position: relative;
 
   }
 
- @media screen and (max-width: 875px) {
+ @media screen and (max-width: 890px) {
 
   height: 16rem;
   margin-top: 18.4rem;
