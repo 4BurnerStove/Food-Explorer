@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 import { Input } from '../Input'
 
-export const Container = styled.div`
+export const Container = styled.header`
 width: 100%;
 height: 11.2rem;
 
 display: flex;
 position: fixed;
+z-index: 999;
+
 align-items: center;
 justify-content: space-around;
 gap: 3.2rem;
