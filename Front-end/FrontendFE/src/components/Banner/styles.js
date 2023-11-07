@@ -12,9 +12,14 @@ color: ${({ theme }) => theme.COLORS.LIGHT_100};
 border-radius: 0.3rem;
 position: relative;
 
-  div {
-    margin-right: clamp(0.5rem, 4vw, 1.6rem);
+  p {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
 
+  div {
+    width: 38rem;
+    margin-right: 8rem;
   }
 
   img {
