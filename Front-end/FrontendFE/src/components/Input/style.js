@@ -8,7 +8,7 @@ export const Container = styled.div`
   margin-bottom: .8rem;
   border-radius: 1rem;
 
-  > input {
+   input {
     padding: 1.8rem;
 
     width: 100%;
@@ -22,7 +22,7 @@ export const Container = styled.div`
     }
   }
 
-  > svg {
+   svg {
     margin-left: 1.2rem;
   }
 

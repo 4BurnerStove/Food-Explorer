@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { Input } from '../Input'
 
 export const Container = styled.div`
-  
 width: 100%;
 height: 11.2rem;
 
@@ -18,25 +17,10 @@ background: ${({ theme }) => theme.COLORS.DARK_600};
     width: 30%;
   }
 
-
   > div:nth-child(2) {
-    width: 55%;
-
-    div {
-      justify-content: center;
-
-      svg {
-        color: ${({ theme }) => theme.COLORS.LIGHT.LIGHT_400};
-      }
-
-      input {
-        width: 70%;
-      }
-
-    }
+    padding-left: clamp(4%, 9vw, 15%);
   }
 
-  
   > div:last-child {
     width: 50%;
     display: flex;
@@ -44,4 +28,9 @@ background: ${({ theme }) => theme.COLORS.DARK_600};
     gap: 3.2rem;
     margin-right: 1rem;
   }
+`
+
+export const InputAlt = styled(Input)`
+
+
 `
