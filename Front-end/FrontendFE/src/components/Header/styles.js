@@ -29,8 +29,3 @@ background: ${({ theme }) => theme.COLORS.DARK_600};
     margin-right: 1rem;
   }
 `
-
-export const InputAlt = styled(Input)`
-
-
-`

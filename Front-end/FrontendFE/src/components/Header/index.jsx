@@ -1,4 +1,6 @@
-import { Container, InputAlt } from './styles'
+import { Container } from './styles'
+
+import { Input } from '../Input'
 
 import { Logo } from '../Logo'
 import { Button } from '../Button'
@@ -12,7 +14,7 @@ export function Header() {
     <Container>
       <Logo />
 
-      <InputAlt icon={GoSearch} color='#C4C4CC' placeholder='Busque por pratos ou ingredientes' />
+      <Input icon={GoSearch} color='#C4C4CC' placeholder='Busque por pratos ou ingredientes' />
 
       <div>
         <Button icon={PiReceiptBold} name="Pedidos(0)"></Button>
