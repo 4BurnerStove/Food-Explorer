@@ -12,6 +12,7 @@ export default {
     DARK_600: "#00111A",
     DARK_800: "#0D1D25",
     DARK_900: "#0D1D25",
+    DARK_1000: "#192227",
 
     TOMATO_100: "#750310",
     TOMATO_200: "#92000E",

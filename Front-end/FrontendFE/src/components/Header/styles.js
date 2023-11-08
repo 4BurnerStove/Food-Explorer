@@ -20,7 +20,7 @@ background: ${({ theme }) => theme.COLORS.DARK_600};
   }
 
   > div:nth-child(2) {
-    padding-left: clamp(4%, 9vw, 15%);
+    padding-left: clamp(6%, 26vw, 15%);
   }
 
   > div:last-child {
