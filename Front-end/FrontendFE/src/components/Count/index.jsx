@@ -1,9 +1,9 @@
 import { Container } from './styles'
 
-export function DishesCard({}) {
+export function Count() {
   return (
     <Container>
-      
+
     </Container>
   )
 }
