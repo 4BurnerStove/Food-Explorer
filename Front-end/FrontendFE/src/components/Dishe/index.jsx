@@ -21,7 +21,7 @@ export function Dishe({ data, ...rest }) {
       </div>
       <h1>{data.title} </h1>
       <p>{data.description}</p>
-      <p>{formatPrice(data.price)}</p>
+      <span> R$ {formatPrice(data.price)}</span>
       <Count></Count>
     </Container>
   )

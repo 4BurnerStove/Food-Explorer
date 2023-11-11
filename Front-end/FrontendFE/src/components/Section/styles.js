@@ -1,7 +1,14 @@
 import styled from 'styled-components'
 
 export const Container = styled.section`
+  
   margin: 5.6rem 0 1 2.8rem;
+
+  > div {
+    width: 100%;
+    display: flex;
+    gap: 2.7rem;
+  }
 
   > h2 {
     padding-top: 4.8rem;

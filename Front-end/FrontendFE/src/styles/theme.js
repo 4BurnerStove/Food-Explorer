@@ -4,9 +4,14 @@ export default {
     LIGHT_200: "#FFFAF1",
     LIGHT_300: "#E1E1E6",
     LIGHT_400: "#C4C4CC",
-    LIGHT_500: "7C7C8A",
-    LIGHT_600: "76797B",
+    LIGHT_500: "#7C7C8A",
+    LIGHT_600: "#76797B",
 
+
+    CAKE_200: "#82F3FF",
+
+    DARK_200: "#00070A",
+    DARK_300: "#000204",
     DARK_400: "#000A0F",
     DARK_700: "#001119",
     DARK_600: "#00111A",
