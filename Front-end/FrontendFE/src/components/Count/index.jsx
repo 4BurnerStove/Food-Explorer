@@ -23,7 +23,6 @@ export function Count() {
       <span onClick={handleDecrement}>-</span>
       <p>{formattedValue}</p>
       <span onClick={handleIncrement}>+</span>
-
       <Button name='Incluir'></Button>
     </Container>
   )

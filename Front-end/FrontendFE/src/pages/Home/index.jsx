@@ -14,16 +14,59 @@ export function Home() {
         <div className="Sections">
           <Section name={"Refeições"}>
             <Dishe data={{
-              imageFood: '../../assets/imageFoodTest.png',
               title: 'Teste',
               description: 'teste',
               price: '36.31'
-            }}></Dishe>
+            }}>
+            </Dishe>
+
+            <Dishe data={{
+              title: 'Teste',
+              description: 'teste',
+              price: '36.31'
+            }}>
+            </Dishe>
+
+            <Dishe data={{
+              title: 'Teste',
+              description: 'teste',
+              price: '36.31'
+            }}>
+            </Dishe>
+
+            <Dishe data={{
+              title: 'Teste',
+              description: 'teste',
+              price: '36.31'
+            }}>
+            </Dishe>
+
+            <Dishe data={{
+              title: 'Teste',
+              description: 'teste',
+              price: '36.31'
+            }}>
+            </Dishe>
+
+            <Dishe data={{
+              title: 'Teste',
+              description: 'teste',
+              price: '36.31'
+            }}>
+            </Dishe>
+
             <Dishe data={{
               title: 'Teste',
               description: 'teste',
               price: '36.31'
             }}></Dishe>
+
+            <Dishe data={{
+              title: 'Teste',
+              description: 'teste',
+              price: '36.31'
+            }}></Dishe>
+
             <Dishe data={{
               title: 'Teste',
               description: 'teste',
