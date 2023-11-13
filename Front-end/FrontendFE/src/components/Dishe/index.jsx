@@ -2,10 +2,11 @@ import { Container } from './styles'
 import { Count } from '../Count'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { PiPencilSimpleLight } from 'react-icons/pi'
-
+import { useState } from 'react'
 
 
 export function Dishe({ data, ...rest }) {
+  const [totalPrice, setTotalPrice] = useState(data.price)
 
   const formatPrice = (price) => {
     if (price) {
@@ -13,6 +14,10 @@ export function Dishe({ data, ...rest }) {
       return formattedPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
     }
   };
+
+  const handleTotalPriceChange = (newTotalPrice) => {
+    setTotalPrice(newTotalPrice)
+  }
 
 
   return (
@@ -26,8 +31,8 @@ export function Dishe({ data, ...rest }) {
       <div className='description'>
         <p>{data.description}</p>
       </div>
-      <span> R$ {formatPrice(data.price)}</span>
-      <Count></Count>
+      <span> R$ {formatPrice(totalPrice)}</span>
+      <Count productPrice={data.price} onTotalPriceChange={handleTotalPriceChange}></Count>
     </Container>
   )
 }

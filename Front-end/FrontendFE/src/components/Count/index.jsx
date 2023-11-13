@@ -1,9 +1,9 @@
 import { Container } from './styles'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { Button } from '../Button'
 
-export function Count() {
+export function Count({ onTotalPriceChange, productPrice }) {
   const [count, setCount] = useState(1)
 
   const handleIncrement = () => {
@@ -15,6 +15,15 @@ export function Count() {
       setCount(count - 1)
     }
   }
+
+  const CalculateTotalPrice = () => {
+    return count * productPrice
+  }
+
+  useEffect(() => {
+    const totalPrice = CalculateTotalPrice()
+    onTotalPriceChange(totalPrice)
+  }, [count, onTotalPriceChange])
 
   const formattedValue = count < 10 ? `0${count}` : `${count}`
 

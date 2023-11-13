@@ -24,15 +24,16 @@ export const Container = styled.div`
   .description {
     width: 18rem;
     text-align: center;
+    
+    p {
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 1.4rem;
+    }
   }
 
-  p {
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 1.4rem;
-  }
 
   h1, p, span {
     margin-block: 1.5rem;
