@@ -30,6 +30,8 @@ export const Content = styled.div`
     width: 2.4rem;
     cursor: pointer;
     border: none;
+    width: 10%;
+    background: linear-gradient(to left, transparent 0%, black 200%);
   }
 
   .ForwardButton {
@@ -46,9 +48,6 @@ export const Content = styled.div`
        border: none;
        background: transparent;
    }
-
-  
-
 
 `
 
