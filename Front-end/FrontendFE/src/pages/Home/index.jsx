@@ -10,12 +10,11 @@ export function Home() {
       <Header></Header>
       <Main>
         <Banner></Banner>
-
         <div className="Sections">
           <Section name={"Refeições"}>
             <Dishe data={{
               title: 'Teste',
-              description: 'teste',
+              description: 'teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste',
               price: '36.31'
             }}>
             </Dishe>

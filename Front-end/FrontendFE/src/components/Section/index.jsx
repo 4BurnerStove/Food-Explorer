@@ -3,8 +3,6 @@ import { useRef } from 'react'
 import { Container, Content } from './styles'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 
-
-
 export function Section({ name, children }) {
   const carousel = useRef(null)
 

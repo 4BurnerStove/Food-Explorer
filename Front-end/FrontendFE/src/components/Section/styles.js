@@ -27,10 +27,10 @@ export const Content = styled.div`
     left: 0;
     right: auto;
     bottom: 0;
-    width: 2.4rem;
+
     cursor: pointer;
     border: none;
-    width: 10%;
+    width: 3%;
     background: linear-gradient(to left, transparent 0%, black 200%);
   }
 

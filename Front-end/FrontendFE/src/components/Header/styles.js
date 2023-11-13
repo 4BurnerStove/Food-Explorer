@@ -17,6 +17,7 @@ background: ${({ theme }) => theme.COLORS.DARK_600};
 
   > div:first-child {
     width: 30%;
+    font-size: 1.4rem;
   }
 
   > div:nth-child(2) {

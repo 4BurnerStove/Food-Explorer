@@ -21,7 +21,16 @@ export const Container = styled.div`
     cursor: pointer;
   }
 
+  .description {
+    width: 18rem;
+    text-align: center;
+  }
+
   p {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-size: 1.4rem;
   }
 
