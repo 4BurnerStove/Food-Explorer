@@ -3,6 +3,7 @@ import { Header } from '../../components/Header'
 import { Section } from "../../components/Section";
 import { Banner } from "../../components/Banner";
 import { Dishe } from "../../components/Dishe";
+import { Footer } from "../../components/Footer"
 
 export function Home() {
   return (
@@ -72,10 +73,55 @@ export function Home() {
               price: '36.31'
             }}></Dishe>
           </Section>
-          <Section name={"Sobremesas"}></Section>
-          <Section name={"Bebidas"}></Section>
+          <Section name={"Sobremesas"}>
+
+            <Dishe data={{
+              title: 'Teste',
+              description: 'teste',
+              price: '36.31'
+            }}>
+            </Dishe>
+
+            <Dishe data={{
+              title: 'Teste',
+              description: 'teste',
+              price: '36.31'
+            }}>
+            </Dishe>
+
+            <Dishe data={{
+              title: 'Teste',
+              description: 'teste',
+              price: '36.31'
+            }}>
+            </Dishe>
+
+          </Section>
+          <Section name={"Bebidas"}>
+            <Dishe data={{
+              title: 'Teste',
+              description: 'teste',
+              price: '36.31'
+            }}>
+            </Dishe>
+
+            <Dishe data={{
+              title: 'Teste',
+              description: 'teste',
+              price: '36.31'
+            }}>
+            </Dishe>
+
+            <Dishe data={{
+              title: 'Teste',
+              description: 'teste',
+              price: '36.31'
+            }}>
+            </Dishe>
+          </Section>
         </div>
 
+        <Footer></Footer>
       </Main>
     </Container>
   )

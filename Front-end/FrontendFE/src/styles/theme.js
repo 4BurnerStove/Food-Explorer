@@ -6,8 +6,10 @@ export default {
     LIGHT_400: "#C4C4CC",
     LIGHT_500: "#7C7C8A",
     LIGHT_600: "#76797B",
-
-
+    LIGHT_700: "#4D585E",
+    
+    
+    CAKE_100: "#065E7C",
     CAKE_200: "#82F3FF",
 
     DARK_200: "#00070A",
@@ -23,6 +25,7 @@ export default {
     TOMATO_200: "#92000E",
     TOMATO_300: "#AB222E",
     TOMATO_400: "#AB4D55",
+
 
 
  

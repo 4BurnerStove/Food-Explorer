@@ -1,10 +1,10 @@
 import { Container } from './styles'
-import logo from '../../assets/logo.svg'
+import { BsHexagonFill } from 'react-icons/bs'
 
 export function Logo() {
   return (
     <Container>
-      <img src={logo} alt="Logo do aplicativo" />
+      <BsHexagonFill />
       <h1>food explorer</h1>
     </Container>
   )

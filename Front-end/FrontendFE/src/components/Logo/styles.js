@@ -10,7 +10,9 @@ export const Container = styled.div`
   color: ${({theme}) => theme.COLORS.LIGHT_100};
   margin-inline: .8rem;
 
-  > img {
+  > svg {
     width: 4.5rem;
+    height: 4.5rem;
+    color: ${({theme}) => theme.COLORS.CAKE_100};
   }
 `
