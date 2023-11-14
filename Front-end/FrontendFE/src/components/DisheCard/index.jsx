@@ -5,7 +5,7 @@ import { PiPencilSimpleLight } from 'react-icons/pi'
 import { useState } from 'react'
 
 
-export function Dishe({ data, ...rest }) {
+export function DisheCard({ data, ...rest }) {
   const [totalPrice, setTotalPrice] = useState(data.price)
 
   const formatPrice = (price) => {
@@ -18,7 +18,6 @@ export function Dishe({ data, ...rest }) {
   const handleTotalPriceChange = (newTotalPrice) => {
     setTotalPrice(newTotalPrice)
   }
-
 
   return (
     <Container {...rest}>
