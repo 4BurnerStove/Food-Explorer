@@ -32,7 +32,6 @@ export function Count({ onTotalPriceChange, productPrice }) {
       <span onClick={handleDecrement}>-</span>
       <p>{formattedValue}</p>
       <span onClick={handleIncrement}>+</span>
-      <Button name='Incluir'></Button>
     </Container>
   )
 }

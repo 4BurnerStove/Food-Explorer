@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { Container, Content } from './styles'
 import { ButtonText } from '../ButtonText'
 import { Count } from '../Count';
@@ -5,7 +7,18 @@ import { Button } from '../Button';
 import { Ingredients } from '../Ingredients'
 
 export function Dishes({ data, ...rest }) {
-  console.log(data.ingredients)
+  const [totalPrice, setTotalPrice] = useState(data.price)
+
+  const formatPrice = (price) => {
+    if (price) {
+      const formattedPrice = Number(price).toFixed(2)
+      return formattedPrice.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    }
+  };
+
+  const handleTotalPriceChange = (newTotalPrice) => {
+    setTotalPrice(newTotalPrice)
+  }
 
   return (
     <Container {...rest}>
@@ -28,8 +41,8 @@ export function Dishes({ data, ...rest }) {
             )
           }
           <div className='buttons'>
-            <Count></Count>
-            <Button name={['Incluir R$', data.price]}></Button>
+            <Count productPrice={data.price} onTotalPriceChange={handleTotalPriceChange}></Count>
+            <Button name={['Incluir R$', formatPrice(totalPrice)]}></Button>
           </div>
         </div>
       </Content>

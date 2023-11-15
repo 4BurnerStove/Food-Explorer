@@ -14,6 +14,13 @@ export const Content = styled.div`
   color: ${({theme}) => theme.COLORS.LIGHT_100};
   width: 80%;
 
+  .buttons {
+    gap: 3.3rem;
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
   
   .contentText {
     width: 100%;
@@ -24,7 +31,7 @@ export const Content = styled.div`
 
     }
 
-    p {
+    > p {
       font-size: 2.4rem;
       line-height: 140%;
       font-weight: 300;

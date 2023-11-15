@@ -1,5 +1,6 @@
 import { Container } from './styles'
 import { Count } from '../Count'
+import { Button } from '../Button'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { PiPencilSimpleLight } from 'react-icons/pi'
 import { useState } from 'react'
@@ -31,7 +32,11 @@ export function DisheCard({ data, ...rest }) {
         <p>{data.description}</p>
       </div>
       <span> R$ {formatPrice(totalPrice)}</span>
-      <Count productPrice={data.price} onTotalPriceChange={handleTotalPriceChange}></Count>
+      <div>
+        <Count productPrice={data.price} onTotalPriceChange={handleTotalPriceChange}></Count>
+        <Button name='Incluir'></Button>
+      </div>
+
     </Container>
   )
 }

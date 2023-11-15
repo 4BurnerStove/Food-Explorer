@@ -2,7 +2,7 @@ import { Container, Main } from "./styles";
 import { Header } from '../../components/Header'
 import { Section } from "../../components/Section";
 import { Banner } from "../../components/Banner";
-import { DisheCardCard } from "../../components/DisheCardCard";
+import { DisheCard} from "../../components/DisheCard";
 import { Footer } from "../../components/Footer"
 
 export function Home() {

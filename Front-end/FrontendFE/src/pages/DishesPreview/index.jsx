@@ -11,7 +11,7 @@ export function DishesPreview() {
         data={{
           title: 'Salada Ravanello ',
           description: 'Rabanetes, folhas verdes e molho agridoce salpicados com gergelim. O pão naan dá um toque especial.',
-          price: '25.31',
+          price: '25',
           ingredients: [
             { id: '1', name: 'Cebola' },
             { id: '2', name: 'Alho' },
