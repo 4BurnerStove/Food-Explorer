@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Input } from '../Input'
 
 export const Container = styled.header`
 width: 100%;

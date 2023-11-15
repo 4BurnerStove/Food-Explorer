@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 90rem;
+  width: 50%;
   margin: 0 auto;
 `
 export const Content = styled.div`
+  height: 55vh;
   margin-block: 15rem;
   display: flex;
   align-items: center;
@@ -14,6 +15,20 @@ export const Content = styled.div`
   color: ${({theme}) => theme.COLORS.LIGHT_100};
   width: 80%;
 
+  > div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    button {
+      width: 10rem;
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 4.2rem;
+      justify-content: flex-start;
+    }
+  }
+
   .buttons {
     gap: 3.3rem;
     width: 50%;
@@ -21,14 +36,12 @@ export const Content = styled.div`
     justify-content: flex-start;
   }
 
-  
   .contentText {
     width: 100%;
 
     h1 {
       font-size: 4rem;
       font-weight: 500;
-
     }
 
     > p {

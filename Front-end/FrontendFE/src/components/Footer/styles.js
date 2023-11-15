@@ -4,16 +4,19 @@ export const Container = styled.div`
   width: 100%;
   display: flex;
   padding: 2.2rem 12rem;
-  margin-top: 4.2rem;
+  margin-top: auto;
   justify-content: space-between;
   align-items: center;
+  
+  position: fixed;
+  bottom: 0;
 
   background: ${({ theme }) => theme.COLORS.DARK_600};
   color: ${({ theme }) => theme.COLORS.LIGHT_100} ;
 
   > div {
     font-size: 1.4rem;
-    width: 20%;
+    width: 25rem;
     color: ${({ theme }) => theme.COLORS.LIGHT_700};
     
 
