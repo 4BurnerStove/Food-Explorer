@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    display: grid;
+    display: flex;
     width: 100%;
-
-
 `

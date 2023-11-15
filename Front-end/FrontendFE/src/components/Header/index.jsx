@@ -18,7 +18,8 @@ export function Header() {
 
       <div>
         <Button icon={PiReceiptBold} name="Pedidos(0)"></Button>
-        <RxExit size={30} color='#C4C4CC'></RxExit>
+        {/* <Button name="Novo Prato"></Button> */}
+        <RxExit size={35} color='#C4C4CC'></RxExit>
       </div>
     </Container>
   )

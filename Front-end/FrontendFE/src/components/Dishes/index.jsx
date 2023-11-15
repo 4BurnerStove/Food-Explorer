@@ -44,6 +44,7 @@ export function Dishes({ data, ...rest }) {
           <div className='buttons'>
             <Count productPrice={data.price} onTotalPriceChange={handleTotalPriceChange}></Count>
             <Button name={['Incluir R$', formatPrice(totalPrice)]}></Button>
+            {/* <Button name='Editar prato'></Button> */}
           </div>
         </div>
       </Content>
