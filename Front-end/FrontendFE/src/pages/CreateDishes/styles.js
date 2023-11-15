@@ -10,17 +10,23 @@ export const Content = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-
-  > button {
+  
+  .button {
+    width: 100%;
     display: flex;
-    justify-content: flex-end;
     white-space: nowrap;
     margin-top: 3.2rem;
-    width: 25%;
+    justify-content: flex-end;
+
+    button {
+      width: 25%;
+    }
   }
+
 
   div {
     display: flex;
+    justify-content: center;
     gap: .8rem;
   }
 
@@ -35,13 +41,13 @@ export const Content = styled.div`
 export const Form = styled.form`
   width: 80%;
   height: 50vh;
-  
-  margin: 19.5rem auto;
+  margin: 22.5rem auto;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
 
+  
   .divPrinf {
     width: 100%;
     display: flex;
@@ -74,7 +80,7 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     
-    p {
+    > p {
       margin-bottom: 1.6rem;
     }
   }
@@ -83,3 +89,19 @@ export const Form = styled.form`
     justify-content: flex-start;
   }
 `
+
+export const ImageUpload = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem;
+  border-radius: .8rem;
+  background: ${({theme }) => theme.COLORS.DARK_800};;
+  cursor: pointer;
+
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+`
+
