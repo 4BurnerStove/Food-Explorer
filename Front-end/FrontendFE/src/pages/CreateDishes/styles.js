@@ -1,9 +1,8 @@
-import styled from "styled-components"
-
+import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
-  color: ${({theme}) => theme.COLORS.LIGHT_100};
+  color: ${({ theme }) => theme.COLORS.LIGHT_100};
 `
 
 export const Content = styled.div`
@@ -14,7 +13,7 @@ export const Content = styled.div`
   .SelectImage {
     white-space: nowrap;
   }
-  
+
   .button {
     width: 100%;
     display: flex;
@@ -24,13 +23,13 @@ export const Content = styled.div`
 
     button {
       width: 25%;
+      background-color: ${({ theme }) => theme.COLORS.TOMATO_400};
     }
   }
 
-
-  div {
+  > div {
     display: flex;
-    gap: .8rem;
+    gap: 0.8rem;
   }
 
   h1 {
@@ -50,12 +49,10 @@ export const Form = styled.form`
   flex-direction: column;
   justify-content: center;
 
-  
   .divPrinf {
     width: 100%;
     display: flex;
     gap: 3.2rem;
-
 
     #imageDishe {
       width: 25%;
@@ -70,10 +67,10 @@ export const Form = styled.form`
 
       #selectCategory {
         padding: 1.4rem;
-        background-color: ${({theme}) => theme.COLORS.DARK_800};
+        background-color: ${({ theme }) => theme.COLORS.DARK_800};
         border: none;
-        border-radius: .8rem;
-        color: ${({theme}) => theme.COLORS.LIGHT_100};
+        border-radius: 0.8rem;
+        color: ${({ theme }) => theme.COLORS.LIGHT_100};
         appearance: none;
 
         background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M4.4545 7.8295C4.89384 7.39017 5.60616 7.39017 6.0455 7.8295L12 13.784L17.9545 7.8295C18.3938 7.39017 19.1062 7.39017 19.5455 7.8295C19.9848 8.26884 19.9848 8.98116 19.5455 9.4205L12.7955 16.1705C12.3562 16.6098 11.6438 16.6098 11.2045 16.1705L4.4545 9.4205C4.01517 8.98116 4.01517 8.26884 4.4545 7.8295Z' fill='%23C4C4CC'/%3E%3C/svg%3E%0A");
@@ -84,6 +81,20 @@ export const Form = styled.form`
 
     #Ingredients {
       width: 70%;
+
+      #ContentIngredients {
+        width: 100%;
+        border-radius: 0.8rem;
+        padding: 0.5rem 1.2rem;
+        background: ${({ theme }) => theme.COLORS.DARK_800};
+      }
+
+      #AllIngredients {
+        width: 38%;
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+      }
     }
 
     #Price {
@@ -95,7 +106,7 @@ export const Form = styled.form`
     width: 100%;
     display: flex;
     flex-direction: column;
-    
+
     > p {
       margin-bottom: 1.6rem;
     }
@@ -111,10 +122,10 @@ export const ImageUpload = styled.div`
   align-items: center;
   justify-content: center;
   padding: 1.2rem;
-  border-radius: .8rem;
-  background: ${({theme }) => theme.COLORS.DARK_800};;
+  border-radius: 0.8rem;
+  background: ${({ theme }) => theme.COLORS.DARK_800};
   cursor: pointer;
-  
+
   label {
     cursor: pointer;
     display: flex;
@@ -130,4 +141,3 @@ export const ImageUpload = styled.div`
     height: 2.4rem;
   }
 `
-

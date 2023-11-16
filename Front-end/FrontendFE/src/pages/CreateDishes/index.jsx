@@ -6,6 +6,7 @@ import { Input } from '../../components/Input'
 import { Textarea } from '../../components/Textarea'
 import { ButtonText } from '../../components/ButtonText';
 import { Button } from '../../components/Button'
+import { IngredienteItem } from '../../components/IngredientsItem'
 
 import { SlArrowLeft } from "react-icons/sl";
 import { MdOutlineFileUpload } from "react-icons/md";
@@ -56,8 +57,13 @@ export function CreateDishe() {
 
           <div className='divPrinf'>
             <div id='Ingredients' className='SectionForms'>
-              <p>Ingredientes</p>
-              <Input></Input>
+            <p>Ingredientes</p>
+            <div id='ContentIngredients'>
+              <div id='AllIngredients'>
+                <IngredienteItem value='teste'/>
+                <IngredienteItem isNew/>
+              </div>
+            </div>
             </div>
 
             <div id='Price' className='SectionForms'>
