@@ -27,9 +27,12 @@ export function CreateDishe() {
           <div className='divPrinf'>
             <div id='imageDishe' className='SectionForms'>
               <p>Imagem do prato</p>
-              <ImageUpload>
-                <MdOutlineFileUpload />
-                <p>Selecione a imagem</p>
+              <ImageUpload className='SelectImage'>
+                <label htmlFor="imageFood">
+                  <MdOutlineFileUpload />
+                  <p>Selecione a imagem</p>
+                  <input type="file" id='imageFood' />
+                </label>
               </ImageUpload>
             </div>
 
@@ -40,7 +43,14 @@ export function CreateDishe() {
 
             <div id='Categories' className='SectionForms'>
               <p>Categoria</p>
-              <Input></Input>
+              <select name="Categoria" id="selectCategory">
+                <option value="Almoço">Almoço</option>
+                <option value="Doces">Doces</option>
+                <option value="Janta">Janta</option>
+                <option value="Bebidas">Bebidas</option>
+                <option value="Coveniência">Coveniência</option>
+                <option value="Lanche">Lanche</option>
+              </select>
             </div>
           </div>
 
