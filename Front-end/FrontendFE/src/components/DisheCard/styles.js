@@ -33,6 +33,14 @@ export const Container = styled.div`
     }
   }
 
+  .includes {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
 
   h1, p, span {
     margin-block: 1.5rem;
@@ -48,7 +56,7 @@ export const Container = styled.div`
    color: ${({theme}) => theme.COLORS.CAKE_200}
   }
 
-  div:first-child {
+  > div:first-child {
   
     display: flex;
     flex-direction: column-reverse;

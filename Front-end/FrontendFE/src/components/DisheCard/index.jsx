@@ -32,7 +32,7 @@ export function DisheCard({ data, ...rest }) {
         <p>{data.description}</p>
       </div>
       <span> R$ {formatPrice(totalPrice)}</span>
-      <div>
+      <div className='includes'>
         <Count productPrice={data.price} onTotalPriceChange={handleTotalPriceChange}></Count>
         <Button name='Incluir'></Button>
       </div>

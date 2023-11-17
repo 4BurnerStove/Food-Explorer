@@ -13,7 +13,6 @@ export const Main = styled.main`
 
 
   .Sections {
-
     width: 80%;
     display: flex;
     flex-direction: column;
