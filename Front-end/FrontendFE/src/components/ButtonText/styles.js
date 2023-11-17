@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.button`
   width: 100%;
   background: none;
-  color: ${({theme }) =>  theme.COLORS.LIGHT_100};
+  color: ${({ theme }) => theme.COLORS.LIGHT_100};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,6 +12,5 @@ export const Container = styled.button`
 
   > svg {
     margin-right: 1.2rem;
-
   }
 `

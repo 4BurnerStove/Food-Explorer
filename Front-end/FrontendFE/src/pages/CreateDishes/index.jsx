@@ -21,7 +21,9 @@ export function CreateDishe() {
     <Container>
       <Header />
       <Form>
-        <ButtonText onClick={() => navigate('/')} icon={SlArrowLeft} name={'Voltar'}></ButtonText>
+        <div className='ButtonForward'>
+          <ButtonText onClick={() => navigate('/')} icon={SlArrowLeft} name={'Voltar'}></ButtonText>
+        </div>
 
         <Content>
           <section>

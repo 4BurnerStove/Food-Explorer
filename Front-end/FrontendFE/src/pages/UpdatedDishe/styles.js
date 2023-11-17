@@ -23,7 +23,7 @@ export const Content = styled.div`
     justify-content: flex-end;
 
     button:first-child {
-      background-color: ${({ theme }) => theme.COLORS.DARK_800}
+      background-color: ${({ theme }) => theme.COLORS.DARK_800};
     }
 
     button {
@@ -53,6 +53,15 @@ export const Form = styled.form`
   align-items: center;
   flex-direction: column;
   justify-content: center;
+
+  .ButtonForward {
+    width: 100%;
+
+    button {
+      width: 10rem;
+      justify-content: flex-start;
+    }
+  }
 
   .divPrinf {
     width: 100%;
