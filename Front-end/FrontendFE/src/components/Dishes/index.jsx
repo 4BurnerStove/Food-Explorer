@@ -6,9 +6,11 @@ import { Count } from '../Count';
 import { Button } from '../Button';
 import { Ingredients } from '../Ingredients'
 import { SlArrowLeft } from "react-icons/sl";
+import { useNavigate } from 'react-router-dom';
 
 export function Dishes({ data, ...rest }) {
   const [totalPrice, setTotalPrice] = useState(data.price)
+  const navigate = useNavigate()
 
   const formatPrice = (price) => {
     if (price) {
@@ -25,7 +27,7 @@ export function Dishes({ data, ...rest }) {
     <Container {...rest}>
       <Content>
         <div>
-          <ButtonText icon={SlArrowLeft} name={'Voltar'}></ButtonText>
+          <ButtonText onClick={() => navigate('/')} icon={SlArrowLeft} name={'Voltar'}></ButtonText>
           <img src='https://plus.unsplash.com/premium_photo-1663858367001-89e5c92d1e0e?q=80&w=1015&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' alt="" />
         </div>
 

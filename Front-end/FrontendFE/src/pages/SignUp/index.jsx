@@ -3,8 +3,11 @@ import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
 import { ButtonText } from "../../components/ButtonText"
 import { Logo } from '../../components/Logo'
+import { useNavigate } from "react-router-dom"
 
 export function SignUp() {
+  const navigate = useNavigate()
+
   return (
     <Container>
       <Logo />
@@ -41,7 +44,7 @@ export function SignUp() {
 
         <Button name='Criar conta'></Button>
 
-        <ButtonText name='Já tenho uma conta'></ButtonText>
+        <ButtonText onClick={() => navigate('/')} name='Já tenho uma conta'></ButtonText>
       </Form>
     </Container>
   )

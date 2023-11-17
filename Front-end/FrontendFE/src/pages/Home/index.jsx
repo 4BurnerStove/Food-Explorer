@@ -8,9 +8,9 @@ import { Footer } from "../../components/Footer"
 export function Home() {
   return (
     <Container>
-      <Header></Header>
+      <Header/>
       <Main>
-        <Banner></Banner>
+        <Banner/>
         <div className="Sections">
           <Section name={"Refeições"}>
             <DisheCard data={{

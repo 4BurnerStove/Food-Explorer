@@ -18,4 +18,8 @@ export const Main = styled.main`
     flex-direction: column;
     justify-content: left;
   }
+
+  section:last-child {
+    margin-bottom: 15.8rem;
+  }
 `

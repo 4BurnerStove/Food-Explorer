@@ -10,15 +10,18 @@ import { IngredienteItem } from '../../components/IngredientsItem'
 
 import { SlArrowLeft } from "react-icons/sl";
 import { MdOutlineFileUpload } from "react-icons/md";
+import { useNavigate } from 'react-router-dom'
 
 
 
 export function CreateDishe() {
+  const navigate = useNavigate()
+
   return (
     <Container>
       <Header />
       <Form>
-        <ButtonText icon={SlArrowLeft} name={'Voltar'}></ButtonText>
+        <ButtonText onClick={() => navigate('/')} icon={SlArrowLeft} name={'Voltar'}></ButtonText>
 
         <Content>
           <section>
