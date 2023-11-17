@@ -8,13 +8,14 @@ import Theme from './styles/theme'
 // import { SignIn } from "./pages/SignIn"
 // import { Home } from "./pages/Home"
 // import { DishesPreview } from "./pages/DishesPreview"
-import { CreateDishe } from './pages/CreateDishes'
+// import { CreateDishe } from './pages/CreateDishes'
+import { UpdatedDishe } from './pages/UpdatedDishe'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={Theme}>
       <GlobalStyles />
-      <CreateDishe />
+      <UpdatedDishe />
     </ThemeProvider>
   </React.StrictMode >,
 )
