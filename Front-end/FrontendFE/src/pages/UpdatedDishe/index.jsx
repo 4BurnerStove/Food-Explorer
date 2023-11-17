@@ -28,7 +28,7 @@ export function UpdatedDishe() {
 
         <Content>
           <section>
-            <h1>Adicionar prato</h1>
+            <h1>Atualizar prato</h1>
           </section>
 
           <div className='divPrinf'>

@@ -112,8 +112,13 @@ export const Form = styled.form`
     }
   }
 
-  > button {
-    justify-content: flex-start;
+  .ButtonForward {
+    width: 100%;
+
+    button {
+      width: 10rem;
+      justify-content: flex-start;  
+    }
   }
 `
 
