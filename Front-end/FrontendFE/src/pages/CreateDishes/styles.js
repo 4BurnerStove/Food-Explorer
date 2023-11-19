@@ -90,7 +90,7 @@ export const Form = styled.form`
       }
 
       #AllIngredients {
-        width: 38%;
+        width: 100%;
         display: flex;
         align-items: center;
         gap: 1.2rem;

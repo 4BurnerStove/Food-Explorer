@@ -11,11 +11,38 @@ import { IngredienteItem } from '../../components/IngredientsItem'
 import { SlArrowLeft } from "react-icons/sl";
 import { MdOutlineFileUpload } from "react-icons/md";
 import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
 
 
 export function CreateDishe() {
   const navigate = useNavigate()
+  const [picture, setPicture] = useState(null)
+  const [name, setName] = useState('')
+  const [category, setCategory] = useState(null)
+
+  const [ingredients, setIngredient] = useState([])
+  const [newIngredient, setNewIngredient] = useState("")
+
+  const [price, setPrice] = useState('')
+  const [description, setDescription] = useState('')
+
+
+  function handleAddIngredient(){
+    setIngredient(prevState => [...prevState, newIngredient]);
+    setNewIngredient('')
+
+  }
+
+  function handleRemoveIngredient(deleted){
+    setIngredient(prevState => prevState.filter(ingredient => ingredient !== deleted))
+  }
+  
+
+  function handleChangePicture(event){
+    const file = event.target.files[0]
+    setPicture(file)
+  }  
 
   return (
     <Container>
@@ -37,7 +64,11 @@ export function CreateDishe() {
                 <label htmlFor="imageFood">
                   <MdOutlineFileUpload />
                   <p>Selecione a imagem</p>
-                  <input type="file" id='imageFood' />
+                  <input 
+                  type="file" 
+                  id='imageFood' 
+                  onChange={handleChangePicture}
+                  />
                 </label>
               </ImageUpload>
             </div>
@@ -65,8 +96,22 @@ export function CreateDishe() {
             <p>Ingredientes</p>
             <div id='ContentIngredients'>
               <div id='AllIngredients'>
-                <IngredienteItem value='teste'/>
-                <IngredienteItem isNew/>
+                {
+                  ingredients.map((ingredient, index) => (
+                    <IngredienteItem 
+                    key={String(index)}
+                    value={ingredient}
+                    onClick={() => handleRemoveIngredient(ingredient)}
+                    />
+                  ))
+                }
+
+                <IngredienteItem 
+                isNew
+                onChange={e => setNewIngredient(e.target.value)}
+                value={newIngredient}
+                onClick={handleAddIngredient}
+                />
               </div>
             </div>
             </div>
