@@ -30,5 +30,9 @@ background: ${({ theme }) => theme.COLORS.DARK_600};
     align-items: center;
     gap: 3.2rem;
     margin-right: 1rem;
+
+    svg {
+      cursor: pointer;
+    }
   }
 `

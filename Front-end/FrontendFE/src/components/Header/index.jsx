@@ -1,6 +1,7 @@
 import { Container } from './styles'
 
 import { Input } from '../Input'
+import { useAuth } from '../../hooks/auth'
 
 import { Logo } from '../Logo'
 import { Button } from '../Button'
@@ -11,6 +12,8 @@ import { useNavigate, Link } from 'react-router-dom'
 
 export function Header() {
   const navigate = useNavigate()
+
+  const { signOut } = useAuth()
 
   return (
     <Container>
@@ -23,7 +26,7 @@ export function Header() {
       <div>
         {/* <Button icon={PiReceiptBold} name="Pedidos(0)"></Button> */}
         <Button onClick={() => navigate('/CreateDishe')} name="Novo Prato"></Button>
-        <RxExit size={35} color='#C4C4CC'></RxExit>
+        <RxExit onClick={signOut} size={35} color='#C4C4CC'></RxExit>
       </div>
     </Container>
   )
