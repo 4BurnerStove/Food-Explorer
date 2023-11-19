@@ -11,13 +11,16 @@ import Theme from './styles/theme'
 // import { CreateDishe } from './pages/CreateDishes'
 // import { UpdatedDishe } from './pages/UpdatedDishe'
 
+import { AuthProvider } from './hooks/auth'
 import { Routes } from './routes'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={Theme}>
       <GlobalStyles />
-      <Routes />
+      <AuthProvider>
+        <Routes />
+       </AuthProvider>
     </ThemeProvider>
   </React.StrictMode >,
 )

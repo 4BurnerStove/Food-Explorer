@@ -14,7 +14,6 @@ export const Container = styled.div`
     text-align: center;
     white-space: nowrap;
   }
-  
 `
 
 export const Form = styled.form`

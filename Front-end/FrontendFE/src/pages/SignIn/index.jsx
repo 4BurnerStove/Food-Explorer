@@ -3,12 +3,24 @@ import { Input } from "../../components/Input"
 import { Button } from "../../components/Button"
 import { ButtonText } from "../../components/ButtonText"
 import { Logo } from '../../components/Logo'
+import { useAuth } from '../../hooks/auth'
+import { useState } from 'react'
+
+
 import { Link } from 'react-router-dom'
 import { useNavigate } from "react-router-dom"
 
 export function SignIn() {
+  const [email, setEmail] = useState('') 
+  const [password, setPassword] = useState('') 
   const navigate = useNavigate()
+  const { signIn } = useAuth()
 
+
+
+  function handleSignIn(){
+    signIn({ email, password })
+  }
 
   return (
     <Container>
@@ -22,6 +34,7 @@ export function SignIn() {
             id="E-mail"
             type='text'
             placeholder='Exemplo: exemplo@exemplo.com.br'
+            onChange={e => setEmail(e.target.value)}
           ></Input>
         </section>
         <section>
@@ -30,10 +43,11 @@ export function SignIn() {
             id="Password"
             type='password'
             placeholder='No mínimo 6 caracteres'
+            onChange={e => setPassword(e.target.value)}
           ></Input>
         </section>
 
-        <Button name='Entrar'></Button>
+        <Button onClick={handleSignIn} name='Entrar'></Button>
 
         <ButtonText
         onClick={() => navigate('/register')}
