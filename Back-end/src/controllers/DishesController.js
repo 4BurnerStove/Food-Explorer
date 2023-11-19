@@ -1,24 +1,30 @@
 const knex = require('../database/knex')
+const DiskStorage = require('../providers/DiskStorage')
 
-class DishesController{
-  async create(req, res){
-    const { title, description, price, imageFood, ingredients } = req.body 
+class DishesController {
+  async create(req, res) {
+    const { title, description, price, ingredients } = req.body
+    const image = req.file.filename
 
-    const [ dishes_id ] = await knex("dishes").insert({
+    const diskStorage = new DiskStorage()
+    
+    const filename = await diskStorage.saveFile(image)
+
+    const [dishes_id] = await knex('dishes').insert({
       title,
       description,
       price,
-      imageFood
+      imageFood: filename
     })
 
     const ingredientInsert = ingredients.map(name => {
-      return { 
+      return {
         dishes_id,
         name
       }
     })
 
-    await knex("ingredients").insert(ingredientInsert)
+    await knex('ingredients').insert(ingredientInsert)
 
     res.json()
   }
@@ -29,7 +35,6 @@ class DishesController{
     const dishe = await knex('dishes').where({ id }).first()
 
     return res.json(dishe)
-
   }
 
   async delete(req, res) {
@@ -46,29 +51,28 @@ class DishesController{
     let dishe
 
     if (ingredients) {
-      const filterIgredients = ingredients.split(',').map(ingredient => ingredient.trim())
+      const filterIgredients = ingredients
+        .split(',')
+        .map(ingredient => ingredient.trim())
 
       dishe = await knex('ingredients')
-      .select([
-        "dishes.id",
-        "dishes.title",
-      ])
-      .whereLike("dishes.title", `%${title}%`)
-      .whereIn('ingredient', filterIgredients )
-      .innerJoin("dishes", "dishes.id", "ingredients.dishes_id")
-      .orderBy("dishes.title")
-
+        .select(['dishes.id', 'dishes.title'])
+        .whereLike('dishes.title', `%${title}%`)
+        .whereIn('ingredient', filterIgredients)
+        .innerJoin('dishes', 'dishes.id', 'ingredients.dishes_id')
+        .orderBy('dishes.title')
     } else {
-      dishe = await knex("dishes")
-      .whereLike('title', `%${title}%`)
-      .orderBy('title')
+      dishe = await knex('dishes')
+        .whereLike('title', `%${title}%`)
+        .orderBy('title')
     }
 
     const IngredientsForDishes = await knex('ingredients')
 
-
-    const dishesWithIngredients =  dishe.map(dishes => {
-      const disheIngredient = IngredientsForDishes.filter(tag => tag.dishes_id === dishes.id)
+    const dishesWithIngredients = dishe.map(dishes => {
+      const disheIngredient = IngredientsForDishes.filter(
+        tag => tag.dishes_id === dishes.id
+      )
       console.log(disheIngredient)
 
       return {
@@ -76,7 +80,6 @@ class DishesController{
         ingredient: disheIngredient
       }
     })
-
 
     return res.json(dishesWithIngredients)
   }

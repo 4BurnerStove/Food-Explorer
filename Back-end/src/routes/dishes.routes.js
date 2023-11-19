@@ -16,10 +16,32 @@ const upload = multer(uploadConfig.MULTER)
 
 dishesRoutes.use(ensureAuthenticated)
 
-dishesRoutes.post('/', verifyUserAuthorization('admin'), dishesController.create)
+dishesRoutes.post(
+  '/',
+  verifyUserAuthorization('admin'),
+  upload.single('image'),
+  dishesController.create
+)
+
 dishesRoutes.get('/', dishesController.index)
-dishesRoutes.get('/:id', verifyUserAuthorization('admin'), dishesController.show)
-dishesRoutes.delete('/:id', verifyUserAuthorization('admin'), dishesController.delete)
-dishesRoutes.patch('/picture/:id', verifyUserAuthorization('admin'), upload.single('image'), dishePictureController.update)
+
+dishesRoutes.get(
+  '/:id',
+  verifyUserAuthorization('admin'),
+  dishesController.show
+)
+
+dishesRoutes.delete(
+  '/:id',
+  verifyUserAuthorization('admin'),
+  dishesController.delete
+)
+
+dishesRoutes.patch(
+  '/picture/:id',
+  verifyUserAuthorization('admin'),
+  upload.single('image'),
+  dishePictureController.update
+)
 
 module.exports = dishesRoutes

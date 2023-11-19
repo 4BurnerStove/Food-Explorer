@@ -7,42 +7,63 @@ import { Textarea } from '../../components/Textarea'
 import { ButtonText } from '../../components/ButtonText';
 import { Button } from '../../components/Button'
 import { IngredienteItem } from '../../components/IngredientsItem'
+import {api} from '../../services/api'
 
 import { SlArrowLeft } from "react-icons/sl";
 import { MdOutlineFileUpload } from "react-icons/md";
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 
-
-
 export function CreateDishe() {
   const navigate = useNavigate()
-  const [picture, setPicture] = useState(null)
-  const [name, setName] = useState('')
-  const [category, setCategory] = useState(null)
-
+  const [title, setTitle] = useState('')
+  const [description, setDescription] = useState('')
+  const [price, setPrice] = useState(0)
+  
   const [ingredients, setIngredient] = useState([])
   const [newIngredient, setNewIngredient] = useState("")
+  
+  const [picture, setPicture] = useState(null)
 
-  const [price, setPrice] = useState('')
-  const [description, setDescription] = useState('')
+  function handleChangePicture(event){
+    const file = event.target.files[0]
+    setPicture(file)
+    console.log(file)
+
+  }  
 
 
   function handleAddIngredient(){
     setIngredient(prevState => [...prevState, newIngredient]);
     setNewIngredient('')
-
   }
 
   function handleRemoveIngredient(deleted){
     setIngredient(prevState => prevState.filter(ingredient => ingredient !== deleted))
   }
   
+  async function handleNewDishe(){
+    if(newIngredient) {
+      return alert('Um campo na área de ingredientes não foi confirmado')
+    }
+    console.log(picture)
 
-  function handleChangePicture(event){
-    const file = event.target.files[0]
-    setPicture(file)
-  }  
+    if(!title || !description || !ingredients || !price || !picture){
+      return alert("Preencha todos os campos.")
+    }
+
+
+
+    await api.post('/dishes', {
+      title,
+      description,
+      price,
+      ingredients,
+      imageFood: picture
+    })
+
+    alert("Prato criado com sucesso!")
+  }
 
   return (
     <Container>
@@ -67,7 +88,7 @@ export function CreateDishe() {
                   <input 
                   type="file" 
                   id='imageFood' 
-                  onChange={handleChangePicture}
+                  onClick={handleChangePicture}
                   />
                 </label>
               </ImageUpload>
@@ -75,7 +96,11 @@ export function CreateDishe() {
 
             <div id='Name' className='SectionForms'>
               <p>Nome</p>
-              <Input type='text' placeholder='Ex: Salada Martirs'></Input>
+              <Input
+               type='text' 
+               placeholder='Ex: Salada Martirs'
+               onChange={e => setTitle(e.target.value)}
+               ></Input>
             </div>
 
             <div id='Categories' className='SectionForms'>
@@ -118,17 +143,25 @@ export function CreateDishe() {
 
             <div id='Price' className='SectionForms'>
               <p>Preço</p>
-              <Input type='text' placeholder='R$ 00,00'></Input>
+              <Input
+               type='number' 
+               placeholder='R$ 00,00'
+               onChange={e => setPrice(e.target.value)}
+              ></Input>
             </div>
           </div>
 
           <div className='SectionForms'>
             <p>Descrição</p>
-            <Textarea type='text' placeholder='Fale brevemente sobre o prato, seus ingredientes e composição'></Textarea>
+            <Textarea
+             type='text' 
+             placeholder='Fale brevemente sobre o prato, seus ingredientes e composição'
+             onChange={e => setDescription(e.target.value)}
+             ></Textarea>
           </div>
 
           <div className='button'>
-            <Button name='Salvar alterações'></Button>
+            <Button onClick={handleNewDishe} name='Criar prato'></Button>
           </div>
         </Content>
       </Form>
