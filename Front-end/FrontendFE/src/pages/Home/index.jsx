@@ -18,9 +18,18 @@ export function Home() {
       const response = await api.get(`/dishes`)
       setDishes(response.data)
     }
-    
+
+    async function showSections(){
+      const response = await api.get(`/category`)
+      setCategory(response.data)
+    }
+
+    showSections()
     showDishes()
   }, [])
+
+
+
 
   console.log(dishes)
 
@@ -31,9 +40,6 @@ export function Home() {
         <Banner/>
 
         <div className="Sections">
-          {
-            
-          }
           <Section name={"Refeições"}>
             {
               dishes.map(dishe => (

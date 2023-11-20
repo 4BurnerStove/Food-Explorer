@@ -5,6 +5,7 @@ import { AiOutlineHeart } from 'react-icons/ai'
 import { PiPencilSimpleLight } from 'react-icons/pi'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 import { api } from '../../services/api'
  
@@ -38,7 +39,7 @@ export function DisheCard({ data, ...rest }) {
         </Link>
       </div>
       <Link to={'/DishesPreview/1'}>
-        <h1>{data.title} </h1>
+        <h1>{data.title} &nbsp; &#x276F;</h1>
       </Link>
       <div className='description'>
         <p>{data.description}</p>
