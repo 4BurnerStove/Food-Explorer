@@ -1,11 +1,41 @@
+import { api } from '../../services/api'
+
 import { Container, Main } from "./styles";
 import { Header } from '../../components/Header'
 import { Section } from "../../components/Section";
 import { Banner } from "../../components/Banner";
 import { DisheCard} from "../../components/DisheCard";
 import { Footer } from "../../components/Footer"
+import { useEffect, useState } from "react";
+
 
 export function Home() {
+  const [dish, setDish] = useState([])
+  const [search, setSearch ] = useSearch
+  const [category, setCategory] = useState([])
+
+  useEffect(() => {
+    async function fetchDishes() {
+      const response = await api.get(`/dishes?search=${search}`)
+
+      const fetchedDishes = response.data
+
+      setDishes(fetchedDishes)
+    }
+
+    async function fetchCategory() {
+      const response = await api.get('/category')
+      setCategorys(response.data)
+    }
+    
+    fetchDishes()
+    fetchCategory()
+  },[search])
+
+  useEffect(() => {
+    setSearch('')
+  },[])
+
   return (
     <Container>
       <Header/>
@@ -13,111 +43,17 @@ export function Home() {
         <Banner/>
         <div className="Sections">
           <Section name={"Refeições"}>
-            <DisheCard data={{
-              title: 'Teste',
-              description: 'teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste',
-              price: '36.31'
-            }}>
-            </DisheCard>
-
-            <DisheCard data={{
-              title: 'Teste',
-              description: 'teste',
-              price: '36.31'
-            }}>
-            </DisheCard>
-
-            <DisheCard data={{
-              title: 'Teste',
-              description: 'teste',
-              price: '36.31'
-            }}>
-            </DisheCard>
-
-            <DisheCard data={{
-              title: 'Teste',
-              description: 'teste',
-              price: '36.31'
-            }}>
-            </DisheCard>
-
-            <DisheCard data={{
-              title: 'Teste',
-              description: 'teste',
-              price: '36.31'
-            }}>
-            </DisheCard>
-
-            <DisheCard data={{
-              title: 'Teste',
-              description: 'teste',
-              price: '36.31'
-            }}>
-            </DisheCard>
-
-            <DisheCard data={{
-              title: 'Teste',
-              description: 'teste',
-              price: '36.31'
-            }}></DisheCard>
-
-            <DisheCard data={{
-              title: 'Teste',
-              description: 'teste',
-              price: '36.31'
-            }}></DisheCard>
-
-            <DisheCard data={{
-              title: 'Teste',
-              description: 'teste',
-              price: '36.31'
-            }}></DisheCard>
+        
           </Section>
+        </div>
+        <div className="Sections">
           <Section name={"Sobremesas"}>
-
-            <DisheCard data={{
-              title: 'Teste',
-              description: 'teste',
-              price: '36.31'
-            }}>
-            </DisheCard>
-
-            <DisheCard data={{
-              title: 'Teste',
-              description: 'teste',
-              price: '36.31'
-            }}>
-            </DisheCard>
-
-            <DisheCard data={{
-              title: 'Teste',
-              description: 'teste',
-              price: '36.31'
-            }}>
-            </DisheCard>
-
+        
           </Section>
+        </div>
+        <div className="Sections">
           <Section name={"Bebidas"}>
-            <DisheCard data={{
-              title: 'Teste',
-              description: 'teste',
-              price: '36.31'
-            }}>
-            </DisheCard>
-
-            <DisheCard data={{
-              title: 'Teste',
-              description: 'teste',
-              price: '36.31'
-            }}>
-            </DisheCard>
-
-            <DisheCard data={{
-              title: 'Teste',
-              description: 'teste',
-              price: '36.31'
-            }}>
-            </DisheCard>
+        
           </Section>
         </div>
 

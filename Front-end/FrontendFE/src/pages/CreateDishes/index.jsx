@@ -22,16 +22,16 @@ export function CreateDishe() {
   
   const [ingredients, setIngredient] = useState([])
   const [newIngredient, setNewIngredient] = useState("")
+
+  const [category, setCategory] = useState("")
   
-  const [picture, setPicture] = useState(null)
+  const [image, setImage] = useState(null)
 
-  function handleChangePicture(event){
+  function handleChangeImage(event){
     const file = event.target.files[0]
-    setPicture(file)
+    setImage(file)
     console.log(file)
-
   }  
-
 
   function handleAddIngredient(){
     setIngredient(prevState => [...prevState, newIngredient]);
@@ -46,21 +46,26 @@ export function CreateDishe() {
     if(newIngredient) {
       return alert('Um campo na área de ingredientes não foi confirmado')
     }
-    console.log(picture)
+    console.log(image)
 
-    if(!title || !description || !ingredients || !price || !picture){
+    if(!title || !description || !ingredients || !price || !image){
       return alert("Preencha todos os campos.")
     }
+    const formData = new FormData();
 
+    formData.append('image', image); 
+    formData.append('title', title)
+    formData.append('description', description)
+    formData.append('price', price)
+    formData.append('category_id', category)
 
-
-    await api.post('/dishes', {
-      title,
-      description,
-      price,
-      ingredients,
-      imageFood: picture
+    ingredients.forEach((ingredients) => {
+      formData.append('ingredients[]', ingredients)
     })
+
+    await api.post('/dishes', formData,{ headers: {
+      'Content-Type': 'multipart/form-data'
+    }})
 
     alert("Prato criado com sucesso!")
   }
@@ -88,7 +93,7 @@ export function CreateDishe() {
                   <input 
                   type="file" 
                   id='imageFood' 
-                  onClick={handleChangePicture}
+                  onClick={handleChangeImage}
                   />
                 </label>
               </ImageUpload>
@@ -105,13 +110,13 @@ export function CreateDishe() {
 
             <div id='Categories' className='SectionForms'>
               <p>Categoria</p>
-              <select name="Categoria" id="selectCategory">
-                <option value="Almoço">Almoço</option>
-                <option value="Doces">Doces</option>
-                <option value="Janta">Janta</option>
-                <option value="Bebidas">Bebidas</option>
-                <option value="Coveniência">Coveniência</option>
-                <option value="Lanche">Lanche</option>
+              <select name="Categoria" id="selectCategory" onChange={e => setCategory(e.target.value)}>
+                <option value={1}>Doces</option>
+                <option value={2}>Almoço</option>
+                <option value={3}>Janta</option>
+                <option value={4}>Lanche</option>
+                <option value={5}>Bebidas</option>
+                <option value={6}>Coveniência</option>
               </select>
             </div>
           </div>
