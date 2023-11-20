@@ -10,7 +10,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { api } from '../../services/api'
  
 
-export function DisheCard({ data, ...rest }) {
+export function DisheCard({ data, id, ...rest }) {
   const [totalPrice, setTotalPrice] = useState(data.price)
 
   const formatPrice = (price) => {
@@ -30,15 +30,15 @@ export function DisheCard({ data, ...rest }) {
     <Container {...rest}>
       
       <div>
-        <Link to={'/DishesPreview/1'}>
+        <Link to={`/DishesPreview/${id}`}>
           <img src={imageURL} alt="" />
         </Link>
         {/* <AiOutlineHeart /> */}
-        <Link to={'/UpdatedDishe/1'}>
+        <Link to={`/UpdatedDishe/${id}`}>
           <PiPencilSimpleLight />
         </Link>
       </div>
-      <Link to={'/DishesPreview/1'}>
+      <Link to={`/DishesPreview/${id}`}>
         <h1>{data.title} &nbsp; &#x276F;</h1>
       </Link>
       <div className='description'>

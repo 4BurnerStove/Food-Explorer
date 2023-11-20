@@ -37,6 +37,9 @@ export const Content = styled.div`
   }
 
   .contentText {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
     width: 100%;
 
     h1 {

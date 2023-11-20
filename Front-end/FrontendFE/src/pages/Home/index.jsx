@@ -28,9 +28,6 @@ export function Home() {
     showDishes()
   }, [])
 
-  console.log(categories)
-  // console.log(dishes)
-
   return (
     <Container>
       <Header/>
@@ -39,22 +36,21 @@ export function Home() {
 
         <div className="Sections">
           {categories.map(category => {
-            // Filtra os pratos pertencentes à categoria atual
             const categoryDishes = dishes.filter(dishe => dishe.category_id === category.id);
 
-            // Verifica se há pratos para a categoria atual
+    
             if (categoryDishes.length > 0) {
               return (
                 <Section key={String(category.id)} data={category}>
                   {categoryDishes.map(dishe => (
-                    <DisheCard key={String(dishe.id)} data={dishe}></DisheCard>
+                    <DisheCard 
+                    id={String(dishe.id)}
+                    key={String(dishe.id)} 
+                    data={dishe}></DisheCard>
                   ))}
                 </Section>
               );
             }
-
-            // Se não houver pratos, retorna null ou um componente vazio
-            return null;
           })}
         </div>
         <Footer></Footer>
