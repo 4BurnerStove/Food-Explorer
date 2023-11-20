@@ -27,10 +27,17 @@ export const Container = styled.div`
 
     p {
       width: 100%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+
+      font-family: 'Roboto', sans-serif;
       font-size: 1.4rem;
+      line-height: 160%;
+      font-weight: 400;
+      text-align: center;
+
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
     }
   }
 

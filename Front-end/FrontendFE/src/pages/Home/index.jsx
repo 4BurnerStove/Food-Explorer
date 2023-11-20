@@ -31,6 +31,9 @@ export function Home() {
         <Banner/>
 
         <div className="Sections">
+          {
+            
+          }
           <Section name={"Refeições"}>
             {
               dishes.map(dishe => (
