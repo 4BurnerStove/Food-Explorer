@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 
 export function Home() {
   const [ dishes, setDishes ] = useState([])
-  const [ category, setCategory ] = useState([])
+  const [ categories, setCategories ] = useState([])
 
   useEffect(() => {
     async function showDishes(){
@@ -21,17 +21,15 @@ export function Home() {
 
     async function showSections(){
       const response = await api.get(`/category`)
-      setCategory(response.data)
+      setCategories(response.data)
     }
 
     showSections()
     showDishes()
   }, [])
 
-
-
-
-  console.log(dishes)
+  console.log(categories)
+  // console.log(dishes)
 
   return (
     <Container>
@@ -40,16 +38,29 @@ export function Home() {
         <Banner/>
 
         <div className="Sections">
-          <Section name={"Refeições"}>
-            {
-              dishes.map(dishe => (
-                <DisheCard key={String(dishe.id)} data={dishe}></DisheCard>
-              ))
+          {categories.map(category => {
+            // Filtra os pratos pertencentes à categoria atual
+            const categoryDishes = dishes.filter(dishe => dishe.category_id === category.id);
+
+            // Verifica se há pratos para a categoria atual
+            if (categoryDishes.length > 0) {
+              return (
+                <Section key={String(category.id)} data={category}>
+                  {categoryDishes.map(dishe => (
+                    <DisheCard key={String(dishe.id)} data={dishe}></DisheCard>
+                  ))}
+                </Section>
+              );
             }
-          </Section>
+
+            // Se não houver pratos, retorna null ou um componente vazio
+            return null;
+          })}
         </div>
         <Footer></Footer>
       </Main>
     </Container>
   )
 }
+
+
