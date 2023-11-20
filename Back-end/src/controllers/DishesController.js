@@ -34,11 +34,11 @@ class DishesController {
     const { id } = req.params
 
     const dishe = await knex('dishes').where({ id }).first()
-    const ingredient = await knex('ingredients').where({dishes_id: id}).orderBy('name')
+    const ingredients = await knex('ingredients').where({dishes_id: id}).orderBy('name')
 
     return res.json({
       ...dishe,
-      ingredient
+      ingredients
     })
   }
 

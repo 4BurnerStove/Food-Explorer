@@ -30,7 +30,7 @@ export function Dishes() {
     fetchDishe()
   }, [])
 
-  console.log(data)
+  console.log
 
   const formatPrice = (price) => {
     if (price) {
