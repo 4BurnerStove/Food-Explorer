@@ -23,6 +23,12 @@ dishesRoutes.post(
   dishesController.create
 )
 
+dishesRoutes.put(
+  '/:id',
+  verifyUserAuthorization('admin'),
+  dishesController.update
+)
+
 dishesRoutes.get('/', dishesController.index)
 
 dishesRoutes.get(

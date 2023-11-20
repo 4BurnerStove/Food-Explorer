@@ -50,6 +50,39 @@ class DishesController {
     return res.json()
   }
 
+  async update(req, res) {
+    const { title, description, price, category_id, ingredients } = req.body
+    const { id } = req.params
+
+    await knex('dishes')
+    .where('id', id)
+    this.update({
+      title,
+      description,
+      price,
+      category_id
+    })
+
+    const ingredientsInsert = ingredients.map(ingredient => {
+      return {
+        name: ingredient,
+        dishe_id,
+      }
+    })
+
+    if(ingredientsInsert.length > 0){
+      await knex('ingredients')
+      .where('dishes_id', id)
+      .del()
+
+      await knex('ingredients').insert(ingredientsInsert)
+    } else {
+      throw new AppError('Adicione os ingredientes')
+    }
+
+    return res.json()
+  }
+
   async index(req, res) {
     const { title, ingredients } = req.query
 
