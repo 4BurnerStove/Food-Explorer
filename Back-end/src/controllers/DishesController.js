@@ -56,7 +56,7 @@ class DishesController {
 
     await knex('dishes')
     .where('id', id)
-    this.update({
+    .update({
       title,
       description,
       price,
@@ -111,7 +111,6 @@ class DishesController {
       const disheIngredient = IngredientsForDishes.filter(
         tag => tag.dishes_id === dishes.id
       )
-      console.log(disheIngredient)
 
       return {
         ...dishes,

@@ -12,7 +12,8 @@ export const Container = styled.div`
   border: 1px ${({ theme }) => theme.COLORS.DARK_200} solid;
   color: ${({ theme }) => theme.COLORS.LIGHT_100};
 
-  a:visited {
+  a:visited,
+  a {
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
   }
 

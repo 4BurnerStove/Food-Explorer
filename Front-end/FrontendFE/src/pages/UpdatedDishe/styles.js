@@ -94,7 +94,7 @@ export const Form = styled.form`
     }
 
     #Ingredients {
-      width: 70%;
+      width: 140%;
 
       #ContentIngredients {
         width: 100%;
