@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import { Container, Content } from './styles'
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io'
 
-export function Section({ name, children }) {
+export function Section({ category, children }) {
   const carousel = useRef(null)
 
   const handleBackClick = (e) => {
@@ -19,7 +19,7 @@ export function Section({ name, children }) {
 
   return (
     <Container>
-      <h2>{name}</h2>
+      <h2>{category}</h2>
       <Content>
         <button onClick={handleBackClick} className='BackButton'><IoIosArrowBack></IoIosArrowBack></button>
         <button onClick={handleForwardClick} className='ForwardButton'><IoIosArrowForward></IoIosArrowForward></button>

@@ -23,7 +23,7 @@ export function CreateDishe() {
   const [ingredients, setIngredient] = useState([])
   const [newIngredient, setNewIngredient] = useState("")
 
-  const [category, setCategory] = useState("")
+  const [category, setCategory] = useState(1)
   
   const [image, setImage] = useState(null)
 
