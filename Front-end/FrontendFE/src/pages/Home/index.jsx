@@ -7,12 +7,13 @@ import { Banner } from "../../components/Banner";
 import { DisheCard} from "../../components/DisheCard";
 import { Footer } from "../../components/Footer"
 import { useEffect, useState } from "react";
+import { useSearch } from '../../hooks/search'
 
 
 export function Home() {
-  const [dish, setDish] = useState([])
-  const [search, setSearch ] = useSearch
-  const [category, setCategory] = useState([])
+  const [ dishes, setDishes ] = useState([])
+  const { search , setSearch } = useSearch()
+  const [ categories, setCategorys ] = useState([])
 
   useEffect(() => {
     async function fetchDishes() {
@@ -41,9 +42,10 @@ export function Home() {
       <Header/>
       <Main>
         <Banner/>
+
         <div className="Sections">
           <Section name={"Refeições"}>
-        
+            <DisheCard data={data}></DisheCard>
           </Section>
         </div>
         <div className="Sections">
