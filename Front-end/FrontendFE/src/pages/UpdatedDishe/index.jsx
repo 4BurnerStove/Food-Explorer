@@ -10,13 +10,26 @@ import { IngredienteItem } from '../../components/IngredientsItem'
 
 import { SlArrowLeft } from "react-icons/sl";
 import { MdOutlineFileUpload } from "react-icons/md";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { api } from '../../services/api'
 
 
 
 export function UpdatedDishe() {
   const navigate = useNavigate()
 
+  const params = useParams()
+
+  async function handleRemove(){
+    const confirm = window.confirm("Deseja realmente deletar esse prato?")
+
+    if (confirm){
+      await api.delete(`/dishes/${params.id}`)
+      alert('Prato deletado!')
+
+      navigate('/')
+    }
+  }
 
   return (
     <Container>
@@ -84,7 +97,7 @@ export function UpdatedDishe() {
           </div>
 
           <div className='button'>
-            <Button name='Excluir Prato'></Button>
+            <Button onClick={handleRemove} name='Excluir Prato'></Button>
             <Button name='Salvar alterações'></Button>
           </div>
         </Content>
